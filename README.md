@@ -53,6 +53,3 @@ pytest
 - **Frontend:** React 19, TypeScript, Vite, Tailwind CSS, Recharts
 - **Data:** Synthetic training data + live Open-Meteo weather
 
-## CV
-
-See [CV_DESCRIPTION.md](./CV_DESCRIPTION.md) for English resume bullets.
