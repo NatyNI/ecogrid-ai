@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-solar: var(--solar);
+  --color-grid: var(--grid);
+  --color-battery: var(--battery);
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: oklch(0.18 0.025 165);
+  --foreground: oklch(0.96 0.02 150);
+  --card: oklch(0.22 0.03 165);
+  --card-foreground: oklch(0.96 0.02 150);
+  --popover: oklch(0.22 0.03 165);
+  --popover-foreground: oklch(0.96 0.02 150);
+  --primary: oklch(0.78 0.17 165);
+  --primary-foreground: oklch(0.15 0.04 165);
+  --secondary: oklch(0.28 0.04 165);
+  --secondary-foreground: oklch(0.96 0.02 150);
+  --muted: oklch(0.26 0.025 165);
+  --muted-foreground: oklch(0.7 0.04 155);
+  --accent: oklch(0.88 0.14 155);
+  --accent-foreground: oklch(0.15 0.04 165);
+  --destructive: oklch(0.65 0.22 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.32 0.04 165 / 60%);
+  --input: oklch(0.3 0.04 165);
+  --ring: oklch(0.78 0.17 165);
+  --solar: oklch(0.82 0.17 80);
+  --grid: oklch(0.7 0.13 240);
+  --battery: oklch(0.78 0.17 165);
+  --gradient-eco: linear-gradient(135deg, oklch(0.78 0.17 165), oklch(0.88 0.14 155));
+  --gradient-hero: radial-gradient(circle at 20% 0%, oklch(0.3 0.08 165) 0%, oklch(0.18 0.025 165) 60%);
+  --shadow-glow: 0 0 40px oklch(0.78 0.17 165 / 25%);
+  --shadow-card: 0 8px 32px oklch(0.1 0.02 165 / 40%);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    margin: 0;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .bg-gradient-eco { background: var(--gradient-eco); }
+  .bg-gradient-hero { background: var(--gradient-hero); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .shadow-card { box-shadow: var(--shadow-card); }
+  .text-solar { color: var(--solar); }
+  .text-grid { color: var(--grid); }
+  .text-battery { color: var(--battery); }
+  .bg-solar { background-color: var(--solar); }
+}
